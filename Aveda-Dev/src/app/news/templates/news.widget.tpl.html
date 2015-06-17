@@ -1,0 +1,19 @@
+<article id="NewsWidget" am-layout="vertical" ng-if="newsWidget.articles">
+	<header class="widget-header">
+		<div class="fold"></div>
+		<h6><a ui-sref="base.news">View All</a>News / Alerts</h6>
+	</header>
+	<section class="news-summary" am-padding ng-repeat="item in newsWidget.articles | orderBy:'-Article.Timestamp' | limitTo:3">
+		<header am-margin="bottom" ui-sref="base.news.detail({id: item.ID})">
+			<h4>{{item.Article.Title}}</h4>
+			<p>{{item.Article.Timestamp | date:'shortDate'}}</p>
+		</header>
+		<div ta-bind ng-model="item.Article.Body"></div>
+		<a ui-sref="base.news.detail({id: item.ID})"><b>READ MORE</b></a>
+	</section>
+	<!--<section class="news-summary" ng-if="!newsWidget.articles">
+		<header am-margin="bottom">
+			<h4 class="am-text-c">No new articles</h4>
+		</header>
+	</section>-->
+</article>

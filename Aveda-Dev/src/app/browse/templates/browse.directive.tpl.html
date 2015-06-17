@@ -1,0 +1,21 @@
+<aside class="aveda-browse">
+	<ul>
+		<li ng-repeat="category in browse.categories" ng-click="browse.showSubs(category)">
+			{{category.Name}}
+			<div class="aveda-sub-browse" ng-if="category.Subs" ng-show="category.ShowSubs">
+				<ul>
+					<li ng-repeat="subcat01 in category.Subs" ng-click="browse.showSubs(subcat01)">
+						{{subcat01.Name}}
+						<div class="aveda-sub-browse" ng-if="subcat01.Subs" ng-show="subcat01.ShowSubs">
+							<ul>
+								<li ng-repeat="subcat02 in subcat01.Subs">
+									{{subcat02.Name}}
+								</li>
+							</ul>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</li>
+	</ul>
+</aside>

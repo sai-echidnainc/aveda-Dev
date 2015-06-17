@@ -1,0 +1,30 @@
+<section>
+    <header>
+        <div am-block="">
+            <div am-block="8" am-padding>
+                <h6><b>Notes ({{notes.notes ? notes.notes.length : '0'}})</b></h6>
+            </div>
+            <div am-block="4">
+                <button class="am-btn" ng-click="notes.createNote()"><small>Add Note</small></button>
+            </div>
+        </div>
+    </header>
+    <article am-padding ng-show="notes.creatingNote">
+        <form name="note" ng-submit="notes.saveNote()">
+            <label>Note:</label>
+            <input type="text" ng-model="notes.note.Body" />
+            <button class="am-btn" type="submit"><small>Save</small></button>
+            <button class="am-btn" type="button" ng-click="notes.cancelNote()"><small>Cancel</small></button>
+        </form>
+    </article>
+    <article am-padding ng-repeat="note in notes.notes" ng-show="notes.notes && ($index < 3 || notes.showAllNotes)">
+        <h6>{{note.Note.Timestamp | date:'shortDate'}} <i class="fa fa-times" ng-click="notes.deleteNote(note)"></i></h6>
+        <p>{{note.Note.Body}}</p>
+    </article>
+    <article am-padding ng-show="notes.notes.length > 3">
+        <p ng-click="notes.toggleShowAll()">Show {{notes.showAllNotes ? 'Less' : 'All'}}</p>
+    </article>
+    <article am-padding ng-show="!notes.notes">
+        <p>No notes</p>
+    </article>
+</section>
