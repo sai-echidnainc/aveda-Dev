@@ -1,4 +1,5 @@
 angular.module( 'orderCloud', [
+	'ngMaterial',
 	'templates-app',
 	'ngSanitize',
 	'ngAnimate',
