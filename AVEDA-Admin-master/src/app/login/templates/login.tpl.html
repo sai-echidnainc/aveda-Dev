@@ -1,0 +1,45 @@
+<article id="Login">
+	<section class="am-text-c" am-padding="large">
+		<aveda-logo data-color="#FFF"></aveda-logo>
+	</section>
+	<section am-layout="vertical" class="am-text-c" am-padding="large">
+		<h3>{{login.tab == 'login' ? 'Login to your account' : 'Forgot your password?'}}</h3>
+		<nav am-layout="horizontal">
+			<a href="" ng-click="login.setTab('login')" ng-class="{active:login.tab == 'login'}">LOGIN</a>
+			<a href="" ng-click="login.setTab('forgot')" ng-class="{active:login.tab == 'forgot'}">FORGOT PASSWORD?</a>
+		</nav>
+		<hr/>
+		<div ng-switch="login.tab">
+			<form name="login_form" am-layout="vertical" ng-submit="login.submit(login.credentials);" ng-switch-when="login">
+				<fieldset am-layout="overlayed">
+					<div role="group">
+						<label for="Username" class="visuallyhidden">Username</label>
+						<input id="Username" type="text" name="Username" placeholder="Username" ng-model="login.credentials.Username" ng-required="true"/>
+						<i class="fa fa-user"></i>
+					</div>
+				</fieldset>
+				<fieldset am-layout="overlayed">
+					<div role="group">
+						<label for="Password" class="visuallyhidden">Password</label>
+						<input id="Password" type="password" name="Password" placeholder="Password" ng-model="login.credentials.Password" ng-required="true"/>
+						<i class="fa fa-lock"></i>
+					</div>
+				</fieldset>
+				<fieldset am-layout>
+					<button class="am-btn am-primary" type="submit" ng-disabled="login_form.$invalid">Login</button>
+				</fieldset>
+			</form>
+			<form name="forgot_password" ng-switch-when="forgot">
+				<fieldset am-layout="overlayed">
+					<div role="group">
+						<label for="Email" class="visuallyhidden">Email</label>
+						<input id="Email" type="text" name="Email" placeholder="Email" ng-model="login.forgotPasswordEmail" ng-required="true"/>
+						<i class="fa fa-envelope"></i>
+						<button class="am-btn am-primary" type="submit" ng-disabled="forgot_password.$invalid">Submit</button>
+					</div>
+				</fieldset>
+			</form>
+		</div>
+	</section>
+
+</article>

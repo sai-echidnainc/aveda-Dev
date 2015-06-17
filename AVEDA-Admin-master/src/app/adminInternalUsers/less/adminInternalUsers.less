@@ -1,0 +1,61 @@
+#AdminInternalUsers {
+  height:100%;
+  background-color:@aveda-white;
+}
+
+header.aveda-blue-header {
+  background: linear-gradient(135deg, @aveda-dark-blue 0%,@aveda-blue 100%); /* W3C */
+  padding:@am-root-padding @am-root-padding 0;
+  > * {
+	color:@aveda-white;
+  }
+}
+
+nav[@{am-layout-var}~='aveda-tabs'] {
+  display:flex;
+  flex-flow:row nowrap;
+  a {
+	text-transform: uppercase;
+	position:relative;
+	padding:0 0 0.8em;
+	margin:1em 1.5em 0;
+	flex:0 1 auto;
+	color:lighten(@aveda-blue, 40);
+	font-weight:bold;
+	font-size:1em;
+	text-align:center;
+	transition: color 200ms ease-in-out;
+	&:after {
+	  position:absolute;
+	  left:0;
+	  right:0;
+	  bottom:0;
+	  height:0;
+	  background-color:@aveda-green;
+	  content:' ';
+	  transition: height 200ms ease-in-out;
+	}
+	&.active {
+	  color:@aveda-white;
+	  &:after {
+		height:5px;
+	  }
+	}
+  }
+}
+
+table[@{am-layout-var}='aveda-table'] {
+  font-size:0.8em;
+  border-color:@aveda-table-border-color;
+  thead {
+	background-color:@aveda-table-header-bg;
+	th {
+	  text-align:left;
+	  border-color:@aveda-table-border-color;
+	}
+  }
+}
+
+form[name="createNewUser"] {
+  max-width:700px;
+}

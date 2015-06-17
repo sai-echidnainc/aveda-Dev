@@ -1,0 +1,36 @@
+{
+  "author": "Four51, Inc.",
+  "name": "OrderCloud",
+  "version": "0.0.3",
+  "homepage": "https://github.com/Four51/OrderCloud-Seed-AngularJS",
+  "licenses": {
+    "type": "MIT",
+    "url": "https://raw.github.com/Four51/OrderCloud-Seed-AngularJS/master/LICENSE"
+  },
+  "bugs": "https://github.com/Four51/OrderCloud-Seed-AngularJS/issues",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:Four51/OrderCloud-Seed-AngularJS.git"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "autoprefixer-core": "^5.2.0",
+    "grunt": "~0.4.1",
+    "grunt-bump": "0.0.6",
+    "grunt-contrib-clean": "^0.4.1",
+    "grunt-contrib-concat": "^0.3.0",
+    "grunt-contrib-copy": "^0.4.1",
+    "grunt-contrib-less": "^0.11.4",
+    "grunt-contrib-uglify": "^0.2.7",
+    "grunt-contrib-watch": "^0.4.4",
+    "grunt-conventional-changelog": "^0.1.2",
+    "grunt-html2js": "^0.1.9",
+    "grunt-karma": "^0.8.3",
+    "grunt-less-imports": "^1.1.0",
+    "grunt-ng-annotate": "^0.9.2",
+    "grunt-postcss": "^0.4.0",
+    "karma": "^0.12.31",
+    "karma-firefox-launcher": "^0.1.4",
+    "karma-jasmine": "^0.1.5"
+  }
+}

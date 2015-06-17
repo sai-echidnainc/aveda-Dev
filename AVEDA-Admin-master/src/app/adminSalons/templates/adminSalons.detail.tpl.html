@@ -1,0 +1,23 @@
+<header class="aveda-blue-header">
+    <h3>Salon: {{adminSalonsDetail.salon.Name}}</h3>
+</header>
+<section am-padding>
+    <button type="button" class="am-btn am-primary" ui-sref="base.adminSalons.createSalonUser({soldToID: adminSalonsDetail.salon.ID})">Create New <i class="fa fa-plus-circle"></i></button>
+    <table am-layout="aveda-table">
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>Username</th>
+            <th>Email</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="user in adminSalonsDetail.salonUsers">
+            <td><a>{{user.FirstName + ' ' + user.LastName}}</a></td>
+            <td>{{user.Username}}</td>
+            <td>{{user.Email}}</td>
+        </tr>
+        </tbody>
+    </table>
+</section>
+

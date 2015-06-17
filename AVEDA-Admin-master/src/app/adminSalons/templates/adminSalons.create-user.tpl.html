@@ -1,0 +1,26 @@
+<header class="aveda-blue-header">
+    <h3 am-padding>Create New Salon User
+    </h3>
+</header>
+
+<form name="createNewUser" am-layout="horizontal" am-padding ng-submit="adminSalonsCreateUser.createNewSalonUser();">
+    <fieldset am-layout="stack">
+        <div role="group">
+            <label>User Type</label>
+            <select name="UserType" ng-model="adminSalonsCreateUser.newUser.AccessLevel" ng-options="type.AccessLevel as type.Name for type in adminSalonsCreateUser.userTypes"></select>
+            <label>First Name</label>
+            <input type="text" name="FirstName" ng-model="adminSalonsCreateUser.newUser.FirstName"/>
+            <label>Last Name</label>
+            <input type="text" name="LastName" ng-model="adminSalonsCreateUser.newUser.LastName"/>
+            <label>Username</label>
+            <input type="text" name="Username" ng-model="adminSalonsCreateUser.newUser.Username"/>
+            <label>Password</label>
+            <input type="password" name="Password" ng-model="adminSalonsCreateUser.newUser.Password"/>
+            <label>Email</label>
+            <input type="email" name="Email" ng-model="adminSalonsCreateUser.newUser.Email"/>
+            <label>Phone</label>
+            <input type="tel" name="Phone" ng-model="adminSalonsCreateUser.newUser.Phone"/>
+        </div>
+        <button type="submit" class="am-btn am-primary">Save</button>
+    </fieldset>
+</form>

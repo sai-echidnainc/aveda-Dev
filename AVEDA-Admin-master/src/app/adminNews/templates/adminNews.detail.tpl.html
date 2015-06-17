@@ -1,0 +1,24 @@
+<button type="button" class="am-btn" ng-click="adminNewsDetail.toggleEdit()">{{adminNewsDetail.editing ? 'Cancel' : 'Edit'}}</button>
+<button type="button" class="am-btn" ng-click="adminNewsDetail.delete()">Delete</button>
+<section class="news-article" am-padding="large" ng-if="!adminNewsDetail.editing">
+	<header am-margin="bottom">
+		<h3>{{adminNewsDetail.item.Article.Title}}</h3>
+		<p>{{adminNewsDetail.item.Article.Timestamp | date:'shortDate'}}</p>
+	</header>
+	<div ta-bind ng-model="adminNewsDetail.item.Article.Body"></div>
+</section>
+<section ng-if="adminNewsDetail.editing">
+	<form name="saveNewsArticle" am-padding="large" ng-submit="adminNewsDetail.update()">
+		<fieldset am-layout="stack">
+			<div role="group">
+				<label>Title</label>
+				<input type="text" ng-model="adminNewsDetail.item.Article.Title" ng-required="true"/>
+				<label>Body</label>
+				<text-angular  ng-model="adminNewsDetail.item.Article.Body"></text-angular>
+
+				<!--<textarea type="text" ng-model="adminNewsDetail.item.Article.Body" ng-required="true"></textarea>-->
+				<button type="submit" class="am-btn am-primary" ng-disabled="saveNewsArticle.$invalid">Publish</button>
+			</div>
+		</fieldset>
+	</form>
+</section>

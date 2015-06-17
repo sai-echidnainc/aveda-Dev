@@ -1,0 +1,9 @@
+<h1>Administer Updates</h1>
+<button class="am-btn am-primary" ui-sref="base.adminUpdates.create"><i class="fa fa-plus-circle"></i> New Update</button>
+<section class="news-summary" am-padding ng-repeat="item in adminUpdatesList.updates">
+	<header ui-sref=".detail({id: item.ID})">
+		<h4>{{item.Update.Body}}</h4>
+		<p>{{item.Update.Timestamp | date:'shortDate'}}</p>
+	</header>
+	<button type="button" class="am-btn" ui-sref=".detail({id: item.ID})">View</button>
+</section>

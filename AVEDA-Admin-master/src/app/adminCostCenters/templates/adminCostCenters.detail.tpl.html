@@ -1,0 +1,21 @@
+<button type="button" class="am-btn" ng-click="adminCostCentersDetail.toggleEdit()">{{adminCostCentersDetail.editing ? 'Cancel' : 'Edit'}}</button>
+<button type="button" class="am-btn" ng-click="adminCostCentersDetail.delete()">Delete</button>
+<section class="news-article" am-padding="large" ng-if="!adminCostCentersDetail.editing">
+    <header am-margin="bottom">
+        <h3>{{adminCostCentersDetail.costCenter.Name}}</h3>
+        <p>{{adminCostCentersDetail.costCenter.Description}}</p>
+    </header>
+</section>
+<section ng-if="adminCostCentersDetail.editing">
+    <form name="saveCostCenter" am-padding="large" ng-submit="adminCostCentersDetail.update()">
+        <fieldset am-layout="stack">
+            <div role="group">
+                <label>Name</label>
+                <input type="text" ng-model="adminCostCentersDetail.costCenter.Name" ng-required="true"/>
+                <label>Description</label>
+                <textarea ng-model="adminCostCentersDetail.costCenter.Description"></textarea>
+                <button type="submit" class="am-btn am-primary" ng-disabled="saveCostCenter.$invalid">Save</button>
+            </div>
+        </fieldset>
+    </form>
+</section>

@@ -1,0 +1,9 @@
+<h1>News</h1>
+<section class="news-summary" am-padding ng-repeat="item in newsList.articles | orderBy:'-Article.Timestamp'">
+	<header am-margin="bottom" ui-sref=".detail({id: item.ID})">
+		<h4>{{item.Article.Title}}</h4>
+		<p>{{item.Article.Timestamp | date:'shortDate'}}</p>
+	</header>
+	<div ta-bind ng-model="item.Article.Body"></div>
+	<a ui-sref=".detail({id: item.ID})"><b>READ MORE</b></a>
+</section>

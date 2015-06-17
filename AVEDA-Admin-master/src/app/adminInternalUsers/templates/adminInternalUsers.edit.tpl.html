@@ -1,0 +1,36 @@
+<header class="aveda-blue-header">
+    <h3 am-padding> Editing {{adminEditInternalUser.newUser.FirstName + ' ' + adminEditInternalUser.newUser.LastName + ', '}}
+        <span ng-show="adminEditInternalUser.accessLevel == 'CSR'"> CSR</span>
+        <span ng-show="adminEditInternalUser.accessLevel == 'RegionVP'"> Region VP</span>
+        <span ng-show="adminEditInternalUser.accessLevel == 'POD'"> POD Director</span>
+        <span ng-show="adminEditInternalUser.accessLevel == 'SDP'"> Sales Person</span>
+    </h3>
+</header>
+<form name="EditNewUser" am-layout="horizontal" am-padding ng-submit="adminEditInternalUser.updateUser();">
+    <fieldset am-layout="stack">
+        <div role="group" ng-if="adminEditInternalUser.accessLevel != 'SDP'">
+            <label>First Name</label>
+            <input type="text" name="FirstName" ng-model="adminEditInternalUser.newUser.FirstName"/>
+            <label>Last Name</label>
+            <input type="text" name="LastName" ng-model="adminEditInternalUser.newUser.LastName"/>
+        </div>
+        <div role="group">
+            <label>Username</label>
+            <input type="text" name="Username" ng-model="adminEditInternalUser.newUser.Username"/>
+            <label>Email</label>
+            <input type="email" name="Email" ng-model="adminEditInternalUser.newUser.Email"/>
+            <label>Phone</label>
+            <input type="tel" name="Phone" ng-model="adminEditInternalUser.newUser.Phone"/>
+        </div>
+        <div role="group" ng-show="adminEditInternalUser.accessLevel == 'RegionVP'">
+            <label>Region Assignment</label>
+            <select name="RegionAssignment" multiple ng-multiple="true" ng-model="adminEditInternalUser.newUser.Regions" ng-options="region as region.Name for region in adminEditInternalUser.accessLevelData"></select>
+        </div>
+        <div role="group" ng-show="adminEditInternalUser.accessLevel == 'POD'">
+            <label>POD Assignment</label>
+            <select name="PODAssignment" multiple ng-multiple="true" ng-model="adminEditInternalUser.newUser.PODs" ng-options="pod as pod.Name for pod in adminEditInternalUser.accessLevelData"></select>
+        </div>
+        <button type="submit" class="am-btn am-primary">Save</button>
+        <button type="button" class="am-btn am-danger" ng-click="adminEditInternalUser.deleteUser()">Delete</button>
+    </fieldset>
+</form>

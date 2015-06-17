@@ -1,0 +1,38 @@
+//BUILD ORDER SIZES
+.build-order {
+  #BaseBottom {
+	height: @aveda-build-bottom-height;
+  }
+  #BaseLeft,
+  #BaseRight,
+  #BaseMain {
+	height: calc(~"100vh - "(@aveda-build-top-height + @aveda-build-bottom-height));
+	overflow-y: auto;
+	overflow-x: hidden;
+	& > ui-view {
+	  max-width: none;
+	}
+  }
+  @media(orientation:landscape) {
+	#BaseRight,
+	#BaseLeft {
+	  max-width:250px;
+	  min-width:250px;
+	}
+	[@{am-layout-var}='button-nav'] {
+	  & > a {
+		min-width:250px;
+		max-width:250px;
+	  }
+	}
+  }
+  #BaseLeft {
+	h5, h6 {
+	  margin:0;
+	}
+	h5,
+	header {
+	  background-color:lighten(@aveda-gray,5);
+	}
+  }
+}

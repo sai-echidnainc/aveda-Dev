@@ -1,0 +1,14 @@
+<section am-padding>
+    <table am-layout="aveda-table">
+        <thead>
+        <tr>
+            <th>Salon Name</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="salon in adminSalons.salons">
+            <td><a ui-sref="base.adminSalons.detail({ soldToID: salon.ID})" ui-sref-opts="{reload: true}">{{salon.Name}}</a></td>
+        </tr>
+        </tbody>
+    </table>
+</section>

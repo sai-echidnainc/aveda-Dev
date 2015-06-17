@@ -1,0 +1,16 @@
+<header id="BaseTop" ui-view="top"></header>
+<aside id="BaseLeft" ui-view="left" ng-class="{open:base.drawers.left}"></aside>
+<main id="BaseMain">
+	<ui-view></ui-view>
+	<footer ng-hide="application.$state.is('base.build')">
+		<nav am-layout="left-align">
+			<a href="">About Us</a>
+			<a href="">Terms & Conditions</a>
+			<a href="">Help & Support</a>
+			<a href="">Contact Us</a>
+		</nav>
+	</footer>
+</main>
+<aside id="BaseRight"  ui-view="right" ng-show="application.$state.is('base.build')" ng-class="{open:base.drawers.right}"></aside>
+<footer id="BaseBottom" ui-view="bottom" ng-show="application.$state.is('base.build')"></footer>
+<!--ng-swipe-left="base.setSwipe('right')"-->

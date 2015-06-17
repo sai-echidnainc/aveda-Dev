@@ -1,0 +1,19 @@
+<nav am-layout="horizontal aveda-build-nav">
+	<button type="button" ng-if="application.$ocMedia('orientation:portrait')" ng-click="base.toggleDrawer('left')">
+		<i class="fa fa-user"></i>
+	</button>
+	<a ui-sref="base.dashboard"><h2>AVEDA</h2></a>
+	<div id="Search" ng-if="application.$ocMedia('orientation:landscape')">
+		<form name="search" ng-submit="">
+			<fieldset am-layout="search-input">
+				<div role="group">
+					<input type="search" placeholder="Search Salons..." ng-model="searchTerm"/>
+				</div>
+			</fieldset>
+		</form>
+	</div>
+	<a class="am-text-r" ui-sref="base.dashboard" ng-if="application.$ocMedia('orientation:landscape')"><i class="fa fa-times-circle-o fa-3x"></i></a>
+	<button type="button" ng-if="application.$ocMedia('orientation:portrait')" ng-click="base.toggleDrawer('right')">
+		<i class="fa fa-shopping-cart"></i>
+	</button>
+</nav>
