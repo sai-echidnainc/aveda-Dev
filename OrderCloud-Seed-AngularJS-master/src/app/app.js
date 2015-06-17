@@ -6,7 +6,9 @@ angular.module( 'orderCloud', [
 	'ngMessages',
 	'ngTouch',
 	'ui.router',
-	'orderCloud.sdk'
+	'orderCloud.sdk',
+	'orderCloud.base',
+	'orderCloud.dashboard'
 ])
 
 	.config( Routing )
